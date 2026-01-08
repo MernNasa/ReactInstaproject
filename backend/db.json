@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "af62",
+      "fullname": "sundari",
+      "email": "sundari@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "d3f6",
+      "fullname": "Tinku",
+      "email": "Tinku@gmail.com",
+      "password": "123"
+    },
+    {
+      "fullname": "Leela Mati",
+      "email": "leelamati@gmail.com",
+      "password": "123",
+      "id": "6d59"
+    }
+  ],
+  "posts": []
+}
