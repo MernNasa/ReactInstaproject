@@ -37,7 +37,7 @@ export const routes=createBrowserRouter([
 
                     },
                     {
-                        path:"/dashboard/updateprofile/:name",
+                        path:"/dashboard/updateprofile/:profileID",
                         element:<UpdateProfile/>
                     },
                     {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsRocketFill } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "../../customhooks/useAuth";
 
@@ -12,10 +12,17 @@ const UpdateProfile = () => {
     password: "",
     conformpassword: "",
   });
-  const{activeUser}=useAuth()
-  console.log(activeUser)
+  
+  const {profileID}=useParams()
+  console.log(profileID)
+    const fdata=async () => {
+        const {data}=await axios.get(`http://localhost:3000/users/${profileID}`)
+        setFormData({...data,conformpassword:data.password})
+    }
+
+
   useEffect(()=>{
-    setFormData({...activeUser,conformpassword:activeUser.password})
+    fdata()
   },[])
 
 
@@ -42,8 +49,8 @@ const UpdateProfile = () => {
     };
     // logic to register the data
     try {
-      const result = await axios.put(`http://localhost:3000/users/${activeUser.id}`, finaldata);
-      // console.log(result)
+      const {data} = await axios.put(`http://localhost:3000/users/${profileID}`, finaldata);
+      console.log(data)
       toast.success("Updation success", { position: "top-right" });
       setFormData({
         fullname: "",
@@ -51,7 +58,8 @@ const UpdateProfile = () => {
         password: "",
         conformpassword: "",
       });
-      navigate(`/dashboard/profile/${activeUser.id}`);
+
+      navigate(`/dashboard/profile/${profileID}`);
     } catch (error) {
       console.log(error.message);
     }
