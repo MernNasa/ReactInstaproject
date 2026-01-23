@@ -50,7 +50,7 @@ const UserWelcomePage = () => {
                   </div>
                 </div>
                 <div className="h-64 bg-gray-200 flex items-center justify-center text-gray-500">
-                  Post Image
+                  <img className='h-full w-full object-cover' src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_1280.jpg" alt="" />
                 </div>
                 <div className="p-4">
                   <p className="text-sm mb-3">Building cool dashboards 🚀</p>

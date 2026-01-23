@@ -10,6 +10,8 @@ import UpdateProfile from "../components/userpages/UpdateProfile";
 import Settings from "../components/userpages/Settings";
 import UserWelcomePage from "../components/userpages/UserWelcomePage";
 import AuthRouting from "../privaterouting/AuthRouting";
+import CreatePost from "../components/posts/CreatePost";
+import AllPost from "../components/posts/AllPost";
 
 export const routes=createBrowserRouter([
     {
@@ -43,6 +45,14 @@ export const routes=createBrowserRouter([
                     {
                         path:"/dashboard/settings",
                         element:<Settings/>
+                    },
+                    {
+                        path:"/dashboard/createpost",
+                        element:<CreatePost/>
+                    },
+                    {
+                        path:"/dashboard/allpost",
+                        element:<AllPost/>
                     }
                 ]
             },

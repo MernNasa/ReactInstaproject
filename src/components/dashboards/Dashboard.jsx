@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
 import { LiaUserEditSolid } from "react-icons/lia";
 import { IoAddOutline, IoLogOutOutline } from "react-icons/io5";
@@ -37,24 +37,23 @@ const Dashboard = () => {
           <h2 className="text-2xl font-bold text-indigo-600"><Link to="/dashboard">{activeUser.fullname} Panel</Link></h2>
         </div>
         <nav className="p-4 space-y-2">
-          <Link to={`/dashboard/profile/${id}`} className="w-full text-left px-4 py-2 rounded-lg hover:bg-indigo-50 text-gray-700 font-medium flex items-center gap-3">
+          <NavLink to={`/dashboard/profile/${id}`} 
+          className="w-full text-left px-4 py-2 rounded-lg  font-medium flex items-center gap-3 hover:bg-blue-100 ">
             <CiUser /> My Profile
-          </Link>
-          <Link to={`/dashboard/updateprofile/${activeUser.id}`} className="w-full text-left px-4 py-2 rounded-lg hover:bg-indigo-50 text-gray-700 font-medium flex items-center gap-3">
+          </NavLink>
+          <NavLink to={`/dashboard/updateprofile/${activeUser.id}`} className="w-full text-left px-4 py-2 rounded-lg  font-medium flex items-center gap-3 hover:bg-blue-100 ">
             <LiaUserEditSolid /> Edit Profile
-          </Link>
+          </NavLink>
 
           <div className="pt-4 border-t">
             <p className="px-4 text-xs uppercase text-gray-400 mb-2">Posts</p>
-            <button className="w-full text-left px-4 py-2 rounded-lg hover:bg-indigo-50 text-gray-700 font-medium flex items-center gap-3">
+            <NavLink  to="/dashboard/createpost" className="w-full text-left px-4 py-2 rounded-lg   font-medium flex items-center gap-3 hover:bg-blue-100 ">
               <IoAddOutline /> Create Post
-            </button>
-            <button className="w-full text-left px-4 py-2 rounded-lg hover:bg-indigo-50 text-gray-700 font-medium flex items-center gap-3">
+            </NavLink>
+            <NavLink to="/dashboard/allpost" className="w-full text-left px-4 py-2 rounded-lg  font-medium flex items-center gap-3 hover:bg-blue-100 ">
               <LuImages /> My Posts
-            </button>
-            <button className="w-full text-left px-4 py-2 rounded-lg hover:bg-indigo-50 text-gray-700 font-medium flex items-center gap-3">
-              <MdOutlineExplore /> Explore Posts
-            </button>
+            </NavLink>
+            
           </div>
 
           <div className="pt-4 border-t">
